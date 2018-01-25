@@ -1,2 +1,2 @@
 # curso-de-Vue2.js
-cu
+curso de Vue (vue esencial)
