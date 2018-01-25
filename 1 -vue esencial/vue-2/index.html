@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Vuejs-2</title>
+</head>
+<body>
+    <main class="container">
+        <div class="row">
+            <div class="form-control">
+                <template v-if="conectado">
+                        <h1>Estas Conectado</h1>
+                        <h2 v-if="edad < 18">no puedes entrar</h2>
+                        <h2 v-else-if="edad > 50">viejo</h2>
+                </template>   
+              
+                <h2 v-else> No esta conectado</h2>
+            </div>
+            <button v-on:click="edad += 1" class="btn btn-primary">+{{edad}}</button>
+            <button v-on:click="edad -= 1" class="btn btn-danger">-{{edad}}</button>
+            <button v-on:click="conectado = !conectado" class="btn btn-warning"> botar</button>
+        </div>
+        <div class="row">
+            <pre>{{$data}}</pre>
+        </div>
+    </main>
+
+
+<!--Vuejs-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

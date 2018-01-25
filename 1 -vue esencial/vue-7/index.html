@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Vuejs-7</title>
+</head>
+<body>
+    <main class="container">
+        <ul>
+            <li v-for="item in mejoresJuegos">
+                {{item.titulo}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="item in buscarJuego">
+                {{item.titulo}}
+            </li>
+        </ul>
+        
+        <input id="ex6" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="3">
+        
+        <input type="text" v-model="mensaje" class="form-control">
+        <div class="row">
+            <pre>{{$data}}</pre>
+        </div>
+    </main>
+
+
+<!--Vuejs-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+     <!-- animated ccs-->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <style>
+        .aparecer-enter{
+            opacity: 0;
+        }
+        .aparecer-enter-active{
+            transition: opacity 1s;
+        }
+        .aparecer-leave-to {
+            opacity: 0;
+        }
+        .aparecer-leave-active{
+            transition: opacity 1s;
+        }
+
+        .bounce-enter-active {
+        animation: bounce-in .5s;
+        }
+        .bounce-leave-active {
+        animation: bounce-in .5s reverse;
+        }
+        @keyframes bounce-in {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
+        }
+    </style>
+    <title>Vuejs-10</title>
+</head>
+<body>
+    <main class="container">
+        <button v-on:click="mostrar = !mostrar" class="btn btn-warning"> Mostras/Ocultar</button>
+        
+        <!--tancicion css i`-->
+        <transition name="aparecer" appear>
+                <h1 v-if="mostrar" v-text="mensaje.transicion"></h1>
+        </transition>
+        <!--animacion css i`-->
+        <transition name="bounce">
+                <h1 v-if="mostrar" v-text="mensaje.animacion"></h1>
+        </transition>
+        <!--tancicion css (=url) i`-->
+        <transition 
+            name="animate.css"
+            enter-active-class="animated tada"
+            leave-active-class="animated bounceOutRight">
+            <h1 v-if="mostrar" v-text="mensaje.animationCuston"></h1>
+        </transition>
+        <!--tancicion entre diferente elementos o varios <div> -->
+        <transition name="aparecer" mode="out-in">
+            <h1 v-if="mostrar" v-text="mensaje.entreElementos" key="aparecer" > </h1>
+            <h1 v-else key="ocultarce">Puro payaso en la Cualis</h1>
+        </transition>
+        <div class="row">
+            <pre>{{$data}}</pre>
+        </div>
+    </main>
+
+
+<!--Vuejs-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

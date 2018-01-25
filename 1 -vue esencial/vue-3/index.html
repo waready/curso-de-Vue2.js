@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Vuejs-3</title>
+</head>
+<body>
+    <main class="container">
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="mensajes in mensaje">{{mensajes}}</li>
+                
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li class="list-group-item" v-for="(tareas, index) in tare">{{index}} - {{tareas.nombre}} 
+                    <small>({{tareas.prioridad}})</small>
+                </li>
+            </ul>
+        </div>
+        <div>
+                <div v-for="(value, key, index) in persona">
+                        {{ index }}. {{ key }}: {{ value }}
+                </div>
+        </div>
+        <div>
+            <pre>
+                {{$data}}
+            </pre>
+        </div>
+    </main>
+
+
+<!--Vuejs-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
