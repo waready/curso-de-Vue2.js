@@ -8,12 +8,12 @@ new Vue({
             {nombre:'estudiar', prioridad:'alta'},
             {nombre:'jugar dota', prioridad:'muy alta'}
         ],
-        persona:[
+        persona:
             {nombre:"pedro",
              estudios:"primarios",
              categoria:"estudiante",
              dni:"7085454"
             }
-        ]
+        
     }
 });

@@ -3,6 +3,6 @@ new Vue({
     
     data:{
         conectado:false,
-        edad:44
+        edad:15
     }
 });

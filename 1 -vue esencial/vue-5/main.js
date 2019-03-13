@@ -2,7 +2,7 @@ new Vue({
     el:"main",
     
     data:{
-        nombres:"",
+        nombres:[],
         name: '',
     },
    
